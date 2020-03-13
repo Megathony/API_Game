@@ -1,0 +1,26 @@
+Platforms id :
+6 = PC
+130 = Switch
+n64 : 4
+41 = Wii U
+5 = Wii
+21 = GameCube
+20 = DS
+33 = GB
+22 = GBC
+24 = GBA
+19 = SNES
+23 = DreamCast
+64 = Master System
+29 = Megadrive
+32 = Saturn
+7 = PS1
+8 = PS2
+9 = PS3
+48 = PS4
+165 = PSVR
+38 = PSP
+46 = Vita
+11 = Xbox
+12 = Xbox 360
+49 = Xbox One

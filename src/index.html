@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="Anthony Lombard">
+    <meta name="keywords" content="mots clé pour Google">
+    <meta name="description" content="description">
+    <!-- Affichage standard sur périphérique mobile pour site adaptatif -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Données Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="https://wallpaperaccess.com/full/38070.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:description" content="Description de la page">
+    <meta property="og:title" content="Titre de la page">
+    <meta property="og:site_name" content="Titre du site">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/maquette.css">
+    <link rel="stylesheet" href="./css/responcive.css">
+    <title>Random Game App</title>
+  </head>
+
+
+  <body>
+    <header>
+    	<h1>Welcome to the game</h1>
+    </header>
+    <section class="welcome">
+	    <form method="get" action="">
+		    <SELECT name="platform" size="1" id="platform">
+			    <OPTION value="48">Playstation 4
+			    <OPTION value="9">Playstation 3
+			    <OPTION value="8">Playstation 2
+			    <OPTION value="7">Playstation
+			    <OPTION value="46">Playstation Vita
+			    <OPTION value="38">Playstation Portable
+			    <OPTION value="49">Xbox One
+			    <OPTION value="12">Xbox 360
+			    <OPTION value="11">Xbox
+			    <OPTION value="130">Switch
+			    <OPTION value="37">3DS
+			    <OPTION value="41">Wii U
+			    <OPTION value="20">DS
+			    <OPTION value="5">Wii
+			    <OPTION value="24">GameBoy Advance
+			    <OPTION value="22">Gamecube
+			    <OPTION value="4">Nintendo 64
+			    <OPTION value="6">PC
+		    </SELECT>
+		    <SELECT name="time" size="1" id="time">
+			    <OPTION value="600">< 10 Minutes
+			    <OPTION value="3600">< 1h
+			    <OPTION value="36000">< 10h
+			    <OPTION value="108000">< 30h
+			    <OPTION value="180000">< 50h
+			    <OPTION value="360000">< 100h
+			    <OPTION value="1000000000000000">< Infinit
+		    </SELECT>
+		    <input type="submit" placeholder="découvrir" id="discovery" action="getQuote">
+	    </form>
+    </section>
+    <section class="loading">
+    </section>
+    <section class="result">
+    	
+    </section>
+    <footer>
+    </footer>
+    <script src="./js/flickity-docs.min.js"></script>
+  </body>
+</html>

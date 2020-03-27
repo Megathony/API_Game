@@ -1,0 +1,11 @@
+{{#teams}}
+	<div class="inBox">
+		<div class="coverArt">
+			<img src="{{imgURL}}" alt="{{name}}" >
+		</div>
+		<div class="title">
+			<h2>{{name}}</h2>
+			<p>{{sumary}}</p>
+		</div>
+	</div>
+{{/teams}}

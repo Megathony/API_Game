@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\css",
+    "\\src\\css\\components",
+    "\\src\\css\\config",
+    "\\src\\css\\layouts",
+    "\\src\\js",
+    "\\src\\js\\helper"
+  ],
+  "SelectedNode": "\\src\\js\\greeting.js",
+  "PreviewInSolutionExplorer": false
+}

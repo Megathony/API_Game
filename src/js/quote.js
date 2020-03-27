@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import axios from 'axios';
 
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
@@ -16,53 +17,59 @@ export default class Quote {
 		this.initEvents();
 	}
 
-	$("platform").click(function(){
-		var platform = $(#platform).val();
-		console.log(platform);
-	});
-
-	$("time").click(function(){
-		var time = $(#time).val();
-		console.log(time);
-	})
-
 	initEls(){
 		this.$els = {
 			quoteText: $('.js-quote-text'),
 			quoteAuthor: $ ('.js-quote-author'),
-			container: $ ('.js-container')
+			container: $ ('.js-container'),
+			platform: $('#platform'),
+			time: $('#time')
 		}
 	}
 
 	initEvents(){
+
+		this.$els.platform.change(() =>{
+			var platform = this.$els.platform.val();
+			console.log(platform);
+		});
+		this.$els.time.change(() =>{
+			var time = this.$els.time.val();
+			console.log(time);
+		})
 		this.getQuote();
 	}
 
 	getQuote(){		
-		const api = {
-			endpoint: 'https://api-v3.igdb.com/time_to_beats/',
-			params: {
-				fields *;
-				where platforms:37;
-				limit 500;
-			}
-		};
-
-		$.ajaxSetup({cache: false});
-
-		$.getJSON(api.endpoint, api.params)
-			.then((response) => {
-				console.log(response);
-				this.renderQuote(response[0].content.rendered, response[0].title.rendered);
-			})
-			.catch((e) => {
-				console.log('error with the quote :', e);
-			});
+		axios({
+			url: "https://rawg-video-games-database.p.rapidapi.com/games",
+			method: 'GET',
+			headers: {
+			    "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+				"x-rapidapi-key": "6670c57321msh8b9e19e8314b4d1p1312c7jsn270a144d2945"
+			},
+			data: "",
+		})
+		.then(response => {
+		    console.log(response.data.results);
+		    this.addBackground(response);
+		})
+		.catch(err => {
+		    console.error(err);
+		});
 	}
 
 	renderQuote(quote,author){
 		this.$els.quoteText.prepend(quote);
 		this.$els.quoteAuthor.text(author);
 		this.$els.container.addClass('is-ready');
+	}
+	addBackground(response){
+		this.$els = {
+			background: $('body'),
+		}
+		var $alea = Math.random()*10;
+		this.$els.background.css('background-image', `url(${response.data.results[14].background_image})`);
+		this.$els.background.addClass('is-ready');
 	}
 }

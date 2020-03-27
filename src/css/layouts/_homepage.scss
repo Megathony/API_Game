@@ -16,4 +16,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color:white;
+  background-size: cover; 
+  header{
+      margin-bottom:100px;
+      font-size:25px;
+  }
+  .result{
+      width: 0px;
+      height: 0px;
+  }
+  .result.actif{
+      height:100%;
+  }
 }

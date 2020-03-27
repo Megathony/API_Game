@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,20 +19,21 @@
     <link rel="stylesheet" href="./css/maquette.css">
     <link rel="stylesheet" href="./css/responcive.css">
     <title>Random Game App</title>
-  </head>
+  <link href="style.css" rel="stylesheet"></head>
 
   <body>
     <header>
     	<h1>Welcome to the game</h1>
     </header>
     <section class="welcome">
-		<button  id="discovery" action="newGame"> Découvrir </button>
+	    <form method="get" action="">
+		    <input type="submit" placeholder="découvrir" id="discovery" action="getQuote">
+	    </form>
     </section>
     <section class="newGame">
-        <img class="cross" action="away">
     </section>
     <footer>
     </footer>
     <script src="./js/flickity-docs.min.js"></script>
-  </body>
+  <script type="text/javascript" src="main.js"></script></body>
 </html>

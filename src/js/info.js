@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import axios from 'axios';
 import TemplateGame from '../templates/game.hbs';
+import TemplateGenre from '../templates/genre.hbs';
+import TemplateTime from '../templates/playtime.hbs';
 
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
@@ -23,7 +25,9 @@ export default class Info {
 			newGame: $('.newGame'),
 			button:$('#discovery'),
 			cross:$('#cross'),
-			inBox:$('#inBox')
+			inBox:$('#inBox'),
+			inGenre:$('#inGenre'),
+			inBoxFollow:$('#inGenre')
 		}
 	}
 
@@ -44,15 +48,17 @@ export default class Info {
 
 	getInfo(){	
 		axios({
-			url: "https://www.giantbomb.com/api/games/?api_key=a0351833cd6565f905fbb167ed3ca83564063741&format=jsonp&json_callback=json_callback",
-			method: 'POST',
+			url: "https://rawg-video-games-database.p.rapidapi.com/games",
+			method: 'GET',
 			headers: {
+			    "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+				"x-rapidapi-key": "6670c57321msh8b9e19e8314b4d1p1312c7jsn270a144d2945"
 			},
-			data: "Access-Control-Allow-Origin: *",
+			data: "",
 		})
 		.then(response => {
-		    console.log(response);
-		    this.addInfo(response);
+		    console.log(response.data.results);
+		    this.addInfo(response.data.results);
 		})
 		.catch(err => {
 		    console.error(err);
@@ -60,13 +66,30 @@ export default class Info {
 	}
 
 	addInfo(response){
-		this.$els.newGame.addClass('active');
 		let target = inBox;
+		let targetgenre = inGenre;
+		let targetTime = inBoxFollow;
+		const i = Math.floor( Math.random() * 20 - 1);
 		const template = TemplateGame({
-		imgURL: response,
-		name: response,
+			imgURL: response[i].background_image,
+			name: response[i].name,
+			video: response[i].clip.clip,
+			genre: response[i].genres,
+			time: response[i].playtime,
 		});
 		target.innerHTML = template;
+		for(let j = 0; j < response[i].genres.length; j++){
+			let templategenre = TemplateGenre({
+				namegenre: response[i].genres[j].name,
+			});
+			console.log(response[i].genres[j].name);
+			targetgenre.innerHTML = templategenre;//j'ai pas trouvé pour ajouter :'(
+		}
+		const templatetime = TemplateTime({
+			time: response[i].playtime,
+		});
+		targetTime.innerHTML = templatetime;
 		console.log("ajouté");
+		this.$els.newGame.addClass('active');
 	}
 }

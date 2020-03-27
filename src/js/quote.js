@@ -68,8 +68,8 @@ export default class Quote {
 		this.$els = {
 			background: $('body'),
 		}
-		var $alea = Math.random()*10;
-		this.$els.background.css('background-image', `url(${response.data.results[7].background_image})`);
+		const i = Math.floor( Math.random() * 20 - 1 );
+		this.$els.background.css('background-image', `url(${response.data.results[i].background_image})`);
 		this.$els.background.addClass('is-ready');
 	}
 }

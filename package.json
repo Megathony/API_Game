@@ -41,6 +41,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "flickity": "^2.2.1",
+    "handlebars": "^4.7.3",
+    "handlebars-loader": "^1.7.1",
     "jquery": "^3.4.1",
     "mustache": "^4.0.0",
     "mustache-loader": "^1.4.3"

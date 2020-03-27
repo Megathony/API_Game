@@ -1,6 +1,6 @@
 import '../css/app.scss';
 import Background from './background';
-import getGame from './newgame';
+import Info from './info';
 import leaveGame from './away';
 import Flickity from 'Flickity'
 class App {
@@ -11,15 +11,10 @@ class App {
     initApp () {
       // Start application
       new Background();
+      new Info();
     }
 
-    newgame(){
-    	new getGame();
-    }
 
-    away(){
-    	new leaveGame();
-    }
 }
 
 new App();

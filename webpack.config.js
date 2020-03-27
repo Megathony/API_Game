@@ -45,6 +45,13 @@ config = {
                 }
             },
             {
+                test: /\.hbs$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'handlebars-loader',
+                }
+            },
+            {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
